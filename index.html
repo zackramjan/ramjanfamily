@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript" src="crypt.js"></script>
+<h1>RAMJANFAMILY</h1>
+<h2>This area is secured</h2>
+
+<p>Type our late grandmothers FIRST NAME to access the family contacts</p>
+
+<input type="text" id="p" name="p">
+<button id="myBtn">GO!</button>
+
+<p id="demo">
+
+<script>
+const element = document.getElementById("myBtn");
+element.addEventListener("click", myFunction);
+
+async function myFunction() {
+    var pass = document.getElementById("p").value.toLowerCase();
+    var url = await aesGcmDecrypt("3J0VPnAIXIUGhZfnoaAAwz+Ip/CiEgVvX1lez4yvJ2A7bt7BcGi02u0/bc8SH5eIk/vcWn/D4+lCkbMxSiPk/Zw9ipYJ68cxaz+Z2zjQf+nwZIuz6GkLcpEqegUkRKBFYvTLwxtmGxF8z6Q3cb1xQKtZaMJR3hpEx7IcQEZxU0udW5vgYC90I7ZllUXig1Gf1532MfROrxDHN1sjWEo=",pass);
+    document.getElementById("demo").innerHTML = "<a href=\"" + url +"\">CONTINUE TO FAMILY CONTACTS</a>";
+}
+</script>
+
+</body>
+</html>
