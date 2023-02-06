@@ -91,9 +91,17 @@ element.addEventListener("click", myFunction);
 
 async function myFunction() {
     var pass = document.getElementById("p").value.toLowerCase();
-    var url = await aesGcmDecrypt("nBS7NiTKDH9PbcGZdq3wuLTNiB1KOaV6dodaTZY2UrD5nUSKSB5cPlhI1dHAhJTxPNDzcIxFDya4OspIDDYzDv6PcH6cS+uktv48Efrioe/f1xk6YGmLkHcxygK5NrGw1xMG1I/AWjRuhfCAF0qUS2V2B+85PUVBDB0=",pass);
-    document.getElementById("demo").innerHTML = "<a href=\"" + url +"\">CONTINUE TO FAMILY CONTACTS</a>";
-}
+    try
+    {
+        var url = await aesGcmDecrypt("nBS7NiTKDH9PbcGZdq3wuLTNiB1KOaV6dodaTZY2UrD5nUSKSB5cPlhI1dHAhJTxPNDzcIxFDya4OspIDDYzDv6PcH6cS+uktv48Efrioe/f1xk6YGmLkHcxygK5NrGw1xMG1I/AWjRuhfCAF0qUS2V2B+85PUVBDB0=",pass);
+        document.getElementById("demo").innerHTML = "<a href=\"" + url +"\">CONTINUE TO FAMILY CONTACTS</a>";
+
+    }
+    catch (error)
+    {
+        document.getElementById("demo").innerHTML = "WRONG! Try again";
+    }
+}   
 </script>
 
 </body>
